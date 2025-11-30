@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Repair - JRC Expert Watch & Jewelry Repair</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        .gold-accent { color: #d4af37; }
+        .status-step { transition: all 0.3s ease; }
+        .status-step.active { transform: scale(1.05); }
+        .progress-bar { background: linear-gradient(90deg, #d4af37 0%, #f4d03f 100%); }
+        .tracking-card { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.95); }
+        .notification-badge { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+    </style>
+</head>
+<body class="font-body bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-display font-bold gold-accent">JRC</div>
+                    <div class="ml-2 text-sm font-medium text-gray-600">Expert Watch & Jewelry Repair</div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-amber-600 transition-colors">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-amber-600 transition-colors">Services</a>
+                    <a href="tracking.html" class="text-amber-600 font-semibold">Track Repair</a>
+                    <a href="locations.html" class="text-gray-700 hover:text-amber-600 transition-colors">Locations</a>
+                    <a href="reviews.html" class="text-gray-700 hover:text-amber-600 transition-colors">Reviews</a>
+                    <a href="admin.html" class="text-gray-700 hover:text-amber-600 transition-colors">Admin</a>
+                </div>
+                <button class="bg-amber-600 text-white px-6 py-2 rounded-lg hover:bg-amber-700 transition-colors">
+                    Get Quote
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-search-location text-white text-3xl"></i>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">Track Your Repair</h1>
+            <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto">
+                Stay updated on your repair status with real-time tracking and SMS notifications
+            </p>
+        </div>
+    </section>
+
+    <!-- Tracking Search -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="tracking-card rounded-2xl shadow-xl p-8 mb-8">
+                <h2 class="text-3xl font-display font-bold text-center mb-8">Find Your Repair</h2>
+                <form id="trackingForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="ticketNumber" class="block text-sm font-semibold text-gray-700 mb-2">
+                                <i class="fas fa-ticket-alt mr-2 gold-accent"></i>Ticket Number
+                            </label>
+                            <input type="text" id="ticketNumber" name="ticketNumber" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                                   placeholder="Enter your ticket number (e.g., JRC2024001)">
+                        </div>
+                        <div>
+                            <label for="phoneNumber" class="block text-sm font-semibold text-gray-700 mb-2">
+                                <i class="fas fa-phone mr-2 gold-accent"></i>Phone Number
+                            </label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                                   placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-amber-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-amber-700 transition-all transform hover:scale-105">
+                            <i class="fas fa-search mr-2"></i>Track Repair
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sample Tracking Result -->
+            <div id="trackingResult" class="hidden">
+                <div class="tracking-card rounded-2xl shadow-xl p-8 mb-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-display font-bold">Repair Details</h3>
+                        <div class="notification-badge bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-sms mr-1"></i>SMS Active
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-700 mb-2">Customer Information</h4>
+                            <p class="text-gray-600"><strong>Name:</strong> <span id="customerName">John Smith</span></p>
+                            <p class="text-gray-600"><strong>Phone:</strong> <span id="customerPhone">(555) 123-4567</span></p>
+                            <p class="text-gray-600"><strong>Email:</strong> <span id="customerEmail">john.smith@email.com</span></p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-700 mb-2">Item Details</h4>
+                            <p class="text-gray-600"><strong>Item:</strong> <span id="itemDescription">Rolex Submariner - Battery Replacement</span></p>
+                            <p class="text-gray-600"><strong>Brand:</strong> <span id="itemBrand">Rolex</span></p>
+                            <p class="text-gray-600"><strong>Service:</strong> <span id="serviceType">Battery Replacement & Water Test</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Progress Tracker -->
+                    <div class="mb-8">
+                        <h4 class="text-xl font-display font-bold mb-6 text-center">Repair Progress</h4>
+                        <div class="relative">
+                            <!-- Progress Line -->
+                            <div class="absolute top-6 left-0 w-full h-1 bg-gray-200 rounded-full">
+                                <div id="progressBar" class="progress-bar h-1 rounded-full" style="width: 75%"></div>
+                            </div>
+                            
+                            <!-- Status Steps -->
+                            <div class="relative flex justify-between">
+                                <div class="status-step active flex flex-col items-center">
+                                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white mb-2">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="text-sm font-semibold text-center">Received</span>
+                                    <span class="text-xs text-gray-500">Nov 25, 2024</span>
+                                </div>
+                                
+                                <div class="status-step active flex flex-col items-center">
+                                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white mb-2">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <span class="text-sm font-semibold text-center">In Progress</span>
+                                    <span class="text-xs text-gray-500">Nov 26, 2024</span>
+                                </div>
+                                
+                                <div class="status-step active flex flex-col items-center">
+                                    <div class="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center text-white mb-2">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <span class="text-sm font-semibold text-center">Quality Check</span>
+                                    <span class="text-xs text-gray-500">Nov 27, 2024</span>
+                                </div>
+                                
+                                <div class="status-step flex flex-col items-center">
+                                    <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 mb-2">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <span class="text-sm font-semibold text-center text-gray-400">Ready</span>
+                                    <span class="text-xs text-gray-500">Est. Nov 28, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Updates -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-4">Recent Updates</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-700">Quality Check Completed</p>
+                                    <p class="text-sm text-gray-600">Watch passed water resistance test and time accuracy check</p>
+                                    <p class="text-xs text-gray-500">Nov 27, 2024 at 2:30 PM</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-700">Battery Installed</p>
+                                    <p class="text-sm text-gray-600">New Energizer battery installed and movement calibrated</p>
+                                    <p class="text-xs text-gray-500">Nov 26, 2024 at 4:15 PM</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-amber-500 rounded-full mt-2 mr-3"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-700">Repair Started</p>
+                                    <p class="text-sm text-gray-600">Item received and inspection completed</p>
+                                    <p class="text-xs text-gray-500">Nov 25, 2024 at 10:30 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SMS Notifications -->
+                <div class="tracking-card rounded-2xl shadow-xl p-8">
+                    <h3 class="text-2xl font-display font-bold mb-6">
+                        <i class="fas fa-bell mr-2 gold-accent"></i>SMS Notifications
+                    </h3>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            <span class="text-green-800 font-semibold">SMS notifications are active for this repair</span>
+                        </div>
+                        <p class="text-green-700 text-sm mt-1">You'll receive automatic updates at each stage of the repair process</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-700 mb-2">Notification Settings</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex items-center">
+                                    <input type="checkbox" checked class="mr-2 text-amber-600">
+                                    <span>Repair Started</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" checked class="mr-2 text-amber-600">
+                                    <span>Status Updates</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" checked class="mr-2 text-amber-600">
+                                    <span>Ready for Pickup</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" checked class="mr-2 text-amber-600">
+                                    <span>Reminder Notifications</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-700 mb-2">Sample Messages</h4>
+                            <div class="space-y-2 text-sm text-gray-600">
+                                <div class="bg-white p-2 rounded border">
+                                    <p><strong>JRC Repair:</strong> Your Rolex repair (Ticket: JRC2024001) is now in progress. Expected completion: Nov 28.</p>
+                                </div>
+                                <div class="bg-white p-2 rounded border">
+                                    <p><strong>JRC Repair:</strong> Your repair is ready for pickup! Visit us at Southdale Center. Questions? Call (651) 639-6958</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Section -->
+                <div class="tracking-card rounded-2xl shadow-xl p-8 mt-8">
+                    <h3 class="text-2xl font-display font-bold mb-6">
+                        <i class="fas fa-credit-card mr-2 gold-accent"></i>Payment
+                    </h3>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="text-lg font-semibold">Service Total</h4>
+                            <span class="text-2xl font-bold gold-accent">$50.00</span>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span>Battery Replacement</span>
+                                <span>$25.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Water Resistance Test</span>
+                                <span>$20.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Service Fee</span>
+                                <span>$5.00</span>
+                            </div>
+                            <div class="border-t pt-2 flex justify-between font-semibold">
+                                <span>Total</span>
+                                <span>$50.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <button class="bg-black text-white py-4 px-6 rounded-lg hover:bg-gray-800 transition-colors font-semibold flex items-center justify-center">
+                            <i class="fab fa-apple mr-3 text-2xl"></i>
+                            Pay with Apple Pay
+                        </button>
+                        <button class="bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center">
+                            <i class="fas fa-credit-card mr-3"></i>
+                            Credit/Debit Card
+                        </button>
+                        <button class="bg-blue-500 text-white py-4 px-6 rounded-lg hover:bg-blue-600 transition-colors font-semibold flex items-center justify-center">
+                            <i class="fab fa-google mr-3"></i>
+                            Google Pay
+                        </button>
+                    </div>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-green-600 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold text-green-800">Secure Payment</h4>
+                                <p class="text-green-700 text-sm">Your payment is encrypted and secure. You'll receive an SMS confirmation after payment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-3xl font-display font-bold gold-accent mb-4">JRC</div>
+                    <p class="text-gray-400 mb-4">Expert watch and jewelry repair serving Minnesota since 1980.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Watch Repair</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Jewelry Repair</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Battery Replacement</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Band Adjustment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-amber-600 transition-colors">Track Repair</a></li>
+                        <li><a href="locations.html" class="hover:text-amber-600 transition-colors">Locations</a></li>
+                        <li><a href="reviews.html" class="hover:text-amber-600 transition-colors">Customer Reviews</a></li>
+                        <li><a href="admin.html" class="hover:text-amber-600 transition-colors">Admin Login</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i>(651) 639-6958</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@jrcwatchrepair.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Multiple MN Locations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 JRC Expert Watch & Jewelry Repair. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('trackingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const ticketNumber = document.getElementById('ticketNumber').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            
+            if (ticketNumber && phoneNumber) {
+                // Simulate API call and show results
+                setTimeout(() => {
+                    document.getElementById('trackingResult').classList.remove('hidden');
+                    document.getElementById('trackingResult').scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 500);
+            } else {
+                alert('Please enter both ticket number and phone number.');
+            }
+        });
+
+        // Simulate progress bar animation
+        function animateProgress() {
+            const progressBar = document.getElementById('progressBar');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 75) {
+                    clearInterval(interval);
+                } else {
+                    width += 1;
+                    progressBar.style.width = width + '%';
+                }
+            }, 20);
+        }
+
+        // Animate progress when tracking result is shown
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    const element = mutation.target;
+                    if (element.classList.contains('hidden') === false) {
+                        setTimeout(animateProgress, 1000);
+                    }
+                }
+            });
+        });
+
+        observer.observe(document.getElementById('trackingResult'), { attributes: true });
+    </script>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

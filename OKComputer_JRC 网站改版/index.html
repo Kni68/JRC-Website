@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JRC Expert Watch & Jewelry Repair - Premium Service Since 1980</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        .vanta-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+        .hero-content { position: relative; z-index: 10; }
+        .brand-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .brand-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        .luxury-gradient { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); }
+        .mid-tier-gradient { background: linear-gradient(135deg, #4a5568 0%, #718096 100%); }
+        .entry-gradient { background: linear-gradient(135deg, #a0aec0 0%, #cbd5e0 100%); }
+        .gold-accent { color: #d4af37; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+        .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="font-body bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-display font-bold gold-accent">JRC</div>
+                    <div class="ml-2 text-sm font-medium text-gray-600">Expert Watch & Jewelry Repair</div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#brands" class="text-gray-700 hover:text-amber-600 transition-colors">Brands</a>
+                    <a href="services.html" class="text-gray-700 hover:text-amber-600 transition-colors">Services</a>
+                    <a href="tracking.html" class="text-gray-700 hover:text-amber-600 transition-colors">Track Repair</a>
+                    <a href="locations.html" class="text-gray-700 hover:text-amber-600 transition-colors">Locations</a>
+                    <a href="reviews.html" class="text-gray-700 hover:text-amber-600 transition-colors">Reviews</a>
+                    <a href="admin.html" class="text-gray-700 hover:text-amber-600 transition-colors">Admin</a>
+                </div>
+                <button class="bg-amber-600 text-white px-6 py-2 rounded-lg hover:bg-amber-700 transition-colors">
+                    Get Quote
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen overflow-hidden">
+        <div id="vanta-bg" class="absolute inset-0"></div>
+        <div class="hero-content h-full flex items-center justify-center text-center text-white">
+            <div class="max-w-4xl mx-auto px-4">
+                <h1 class="text-6xl md:text-8xl font-display font-black mb-6 animate-float">
+                    Timeless <span class="gold-accent">Craftsmanship</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 font-light leading-relaxed">
+                    Over 40 years of expert watch and jewelry repair serving Minnesota's finest timepieces and treasured pieces
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="services.html" class="bg-amber-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-amber-700 transition-all transform hover:scale-105">
+                        Explore Services
+                    </a>
+                    <a href="tracking.html" class="bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/30 transition-all">
+                        Track Your Repair
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Hierarchy Section -->
+    <section id="brands" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Premium Brands We Service</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From luxury Swiss timepieces to everyday favorites, our certified technicians handle every brand with precision and care
+                </p>
+            </div>
+
+            <!-- Luxury Brands -->
+            <div class="mb-16 scroll-reveal">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 bg-gradient-to-r from-amber-600 to-yellow-600 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-crown text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-display font-bold gold-accent">Luxury Timepieces</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="brand-card luxury-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Cartier</h4>
+                        <p class="text-sm opacity-80">Swiss Luxury</p>
+                    </div>
+                    <div class="brand-card luxury-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">TAG Heuer</h4>
+                        <p class="text-sm opacity-80">Swiss Precision</p>
+                    </div>
+                    <div class="brand-card luxury-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Omega</h4>
+                        <p class="text-sm opacity-80">Swiss Excellence</p>
+                    </div>
+                    <div class="brand-card luxury-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Rolex</h4>
+                        <p class="text-sm opacity-80">Swiss Masterpiece</p>
+                    </div>
+                    <div class="brand-card luxury-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Breitling</h4>
+                        <p class="text-sm opacity-80">Swiss Aviation</p>
+                    </div>
+                    <div class="brand-card luxury-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">IWC</h4>
+                        <p class="text-sm opacity-80">Swiss Engineering</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mid-Tier Brands -->
+            <div class="mb-16 scroll-reveal">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-500 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-gem text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-display font-bold text-gray-700">Premium Brands</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="brand-card mid-tier-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Movado</h4>
+                        <p class="text-sm opacity-80">Swiss Design</p>
+                    </div>
+                    <div class="brand-card mid-tier-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Citizen</h4>
+                        <p class="text-sm opacity-80">Japanese Tech</p>
+                    </div>
+                    <div class="brand-card mid-tier-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Bulova</h4>
+                        <p class="text-sm opacity-80">American Heritage</p>
+                    </div>
+                    <div class="brand-card mid-tier-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Tissot</h4>
+                        <p class="text-sm opacity-80">Swiss Tradition</p>
+                    </div>
+                    <div class="brand-card mid-tier-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Seiko</h4>
+                        <p class="text-sm opacity-80">Japanese Precision</p>
+                    </div>
+                    <div class="brand-card mid-tier-gradient text-white p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Hamilton</h4>
+                        <p class="text-sm opacity-80">Swiss Movement</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entry-Level Brands -->
+            <div class="scroll-reveal">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-clock text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-display font-bold text-blue-600">Everyday Favorites</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="brand-card entry-gradient text-gray-700 p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Timex</h4>
+                        <p class="text-sm opacity-80">American Classic</p>
+                    </div>
+                    <div class="brand-card entry-gradient text-gray-700 p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Casio</h4>
+                        <p class="text-sm opacity-80">Japanese Innovation</p>
+                    </div>
+                    <div class="brand-card entry-gradient text-gray-700 p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Fossil</h4>
+                        <p class="text-sm opacity-80">American Style</p>
+                    </div>
+                    <div class="brand-card entry-gradient text-gray-700 p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Invicta</h4>
+                        <p class="text-sm opacity-80">Swiss Design</p>
+                    </div>
+                    <div class="brand-card entry-gradient text-gray-700 p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Guess</h4>
+                        <p class="text-sm opacity-80">Fashion Forward</p>
+                    </div>
+                    <div class="brand-card entry-gradient text-gray-700 p-6 rounded-xl text-center">
+                        <div class="text-2xl mb-2">⌚</div>
+                        <h4 class="font-semibold">Anne Klein</h4>
+                        <p class="text-sm opacity-80">Designer Style</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Services Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Quick Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Most services completed while you shop - no appointment needed for routine maintenance
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow scroll-reveal">
+                    <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-battery-full text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-4">Battery Replacement</h3>
+                    <p class="text-gray-600 mb-4">American-made Energizer batteries with 1-year warranty. All sizes in stock.</p>
+                    <div class="text-3xl font-bold gold-accent">$15-25</div>
+                    <p class="text-sm text-gray-500">5-10 minutes</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow scroll-reveal">
+                    <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-link text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-4">Band Adjustment</h3>
+                    <p class="text-gray-600 mb-4">Professional band sizing and adjustment for perfect fit.</p>
+                    <div class="text-3xl font-bold gold-accent">$10-20</div>
+                    <p class="text-sm text-gray-500">10-15 minutes</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow scroll-reveal">
+                    <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tint text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-4">Water Testing</h3>
+                    <p class="text-gray-600 mb-4">Ensure your watch remains water-resistant after service.</p>
+                    <div class="text-3xl font-bold gold-accent">$20-30</div>
+                    <p class="text-sm text-gray-500">15-20 minutes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-3xl font-display font-bold gold-accent mb-4">JRC</div>
+                    <p class="text-gray-400 mb-4">Expert watch and jewelry repair serving Minnesota since 1980.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Watch Repair</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Jewelry Repair</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Battery Replacement</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Band Adjustment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="tracking.html" class="hover:text-amber-600 transition-colors">Track Repair</a></li>
+                        <li><a href="locations.html" class="hover:text-amber-600 transition-colors">Locations</a></li>
+                        <li><a href="reviews.html" class="hover:text-amber-600 transition-colors">Customer Reviews</a></li>
+                        <li><a href="admin.html" class="hover:text-amber-600 transition-colors">Admin Login</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i>(651) 639-6958</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@jrcwatchrepair.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Multiple MN Locations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 JRC Expert Watch & Jewelry Repair. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Vanta.js background
+        VANTA.BIRDS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            backgroundColor: 0x1a1a1a,
+            color1: 0xd4af37,
+            color2: 0x2d2d2d,
+            colorMode: "lerpGradient",
+            birdSize: 1.20,
+            wingSpan: 25.00,
+            speedLimit: 3.00,
+            separation: 20.00,
+            alignment: 20.00,
+            cohesion: 20.00,
+            quantity: 3.00
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - JRC Expert Watch & Jewelry Repair</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        .gold-accent { color: #d4af37; }
+        .review-card { transition: all 0.3s ease; }
+        .review-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .star-rating { color: #fbbf24; }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+        .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+        .review-form { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.95); }
+    </style>
+</head>
+<body class="font-body bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-display font-bold gold-accent">JRC</div>
+                    <div class="ml-2 text-sm font-medium text-gray-600">Expert Watch & Jewelry Repair</div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-amber-600 transition-colors">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-amber-600 transition-colors">Services</a>
+                    <a href="tracking.html" class="text-gray-700 hover:text-amber-600 transition-colors">Track Repair</a>
+                    <a href="locations.html" class="text-gray-700 hover:text-amber-600 transition-colors">Locations</a>
+                    <a href="reviews.html" class="text-amber-600 font-semibold">Reviews</a>
+                    <a href="admin.html" class="text-gray-700 hover:text-amber-600 transition-colors">Admin</a>
+                </div>
+                <button class="bg-amber-600 text-white px-6 py-2 rounded-lg hover:bg-amber-700 transition-colors">
+                    Get Quote
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-star text-white text-3xl"></i>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">Customer Reviews</h1>
+            <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto">
+                See what our customers say about our expert watch and jewelry repair services
+            </p>
+        </div>
+    </section>
+
+    <!-- Overall Rating -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="text-6xl font-display font-bold gold-accent mr-4">4.9</div>
+                    <div class="text-left">
+                        <div class="flex text-2xl star-rating mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-600">Based on 1,247 reviews</p>
+                    </div>
+                </div>
+                <h2 class="text-3xl font-display font-bold mb-4">Trusted by Thousands</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Over 40 years of excellence in watch and jewelry repair across Minnesota
+                </p>
+            </div>
+
+            <!-- Rating Breakdown -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
+                <div class="text-center scroll-reveal">
+                    <div class="text-3xl font-bold text-green-600 mb-2">89%</div>
+                    <div class="flex justify-center star-rating mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600">5 Stars</p>
+                </div>
+                <div class="text-center scroll-reveal">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">8%</div>
+                    <div class="flex justify-center star-rating mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600">4 Stars</p>
+                </div>
+                <div class="text-center scroll-reveal">
+                    <div class="text-3xl font-bold text-amber-600 mb-2">2%</div>
+                    <div class="flex justify-center star-rating mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600">3 Stars</p>
+                </div>
+                <div class="text-center scroll-reveal">
+                    <div class="text-3xl font-bold text-orange-600 mb-2">1%</div>
+                    <div class="flex justify-center star-rating mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600">2 Stars</p>
+                </div>
+                <div class="text-center scroll-reveal">
+                    <div class="text-3xl font-bold text-red-600 mb-2">0%</div>
+                    <div class="flex justify-center star-rating mb-2">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600">1 Star</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl font-display font-bold mb-6">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Real reviews from satisfied customers across all our Minnesota locations
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="review-card bg-white rounded-xl shadow-lg p-6 scroll-reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">JS</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">John Smith</h4>
+                            <div class="flex star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Outstanding service! My Rolex Submariner was running slow and they fixed it perfectly. The staff was knowledgeable and professional. Highly recommend JRC for any luxury watch repairs."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <p><strong>Service:</strong> Rolex Overhaul</p>
+                        <p><strong>Location:</strong> Southdale Center</p>
+                        <p><strong>Date:</strong> November 2024</p>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card bg-white rounded-xl shadow-lg p-6 scroll-reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">MJ</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Maria Johnson</h4>
+                            <div class="flex star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "My engagement ring needed resizing and the prongs tightened. The work was flawless and completed in just one day. The diamond looks more secure than ever. Thank you JRC!"
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <p><strong>Service:</strong> Ring Sizing & Prong Repair</p>
+                        <p><strong>Location:</strong> Roseville</p>
+                        <p><strong>Date:</strong> October 2024</p>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card bg-white rounded-xl shadow-lg p-6 scroll-reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">MD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Michael Davis</h4>
+                            <div class="flex star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Fast and affordable battery replacement for my Omega Speedmaster. They also did a water resistance test. Service was completed in 15 minutes while I shopped. Great experience!"
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <p><strong>Service:</strong> Battery & Water Test</p>
+                        <p><strong>Location:</strong> Minnetonka</p>
+                        <p><strong>Date:</strong> November 2024</p>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card bg-white rounded-xl shadow-lg p-6 scroll-reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">SL</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Sarah Lee</h4>
+                            <div class="flex star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "My Cartier Love bracelet clasp was broken and I was devastated. JRC not only fixed it perfectly but also polished it to look like new. Amazing craftsmanship and customer service!"
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <p><strong>Service:</strong> Clasp Repair & Polishing</p>
+                        <p><strong>Location:</strong> Bloomington</p>
+                        <p><strong>Date:</strong> October 2024</p>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card bg-white rounded-xl shadow-lg p-6 scroll-reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">RW</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Robert Wilson</h4>
+                            <div class="flex star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Brought my vintage 1970s Tudor for restoration. Danny and his team brought it back to life - it looks and runs like new. They even preserved the original character. Incredible work!"
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <p><strong>Service:</strong> Vintage Watch Restoration</p>
+                        <p><strong>Location:</strong> St. Paul</p>
+                        <p><strong>Date:</strong> September 2024</p>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card bg-white rounded-xl shadow-lg p-6 scroll-reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">LB</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Lisa Brown</h4>
+                            <div class="flex star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "My pearl necklace needed restringing and they did a beautiful job. The knots are perfect and they finished it in just 2 days as promised. Very reasonable pricing too!"
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <p><strong>Service:</strong> Pearl Restringing</p>
+                        <p><strong>Location:</strong> Richfield</p>
+                        <p><strong>Date:</strong> November 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Review Form -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="review-form rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-plus text-white text-3xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-display font-bold mb-4">Share Your Experience</h2>
+                    <p class="text-xl text-gray-600">
+                        Help others by leaving a review about your JRC experience
+                    </p>
+                </div>
+
+                <form id="reviewForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="reviewerName" class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+                            <input type="text" id="reviewerName" name="reviewerName" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                                   placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="reviewLocation" class="block text-sm font-semibold text-gray-700 mb-2">Location Visited</label>
+                            <select id="reviewLocation" name="reviewLocation" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                                <option value="">Select a location</option>
+                                <option value="Southdale Center">Southdale Center</option>
+                                <option value="Roseville">Roseville</option>
+                                <option value="Minnetonka">Minnetonka</option>
+                                <option value="Richfield">Richfield</option>
+                                <option value="Bloomington">Bloomington</option>
+                                <option value="St. Paul">St. Paul</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="reviewService" class="block text-sm font-semibold text-gray-700 mb-2">Service Received</label>
+                        <input type="text" id="reviewService" name="reviewService" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                               placeholder="e.g., Watch Battery Replacement, Ring Sizing">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Rating</label>
+                        <div class="flex space-x-2">
+                            <button type="button" class="star-btn text-3xl text-gray-300 hover:text-yellow-400 transition-colors" data-rating="1">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="star-btn text-3xl text-gray-300 hover:text-yellow-400 transition-colors" data-rating="2">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="star-btn text-3xl text-gray-300 hover:text-yellow-400 transition-colors" data-rating="3">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="star-btn text-3xl text-gray-300 hover:text-yellow-400 transition-colors" data-rating="4">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="star-btn text-3xl text-gray-300 hover:text-yellow-400 transition-colors" data-rating="5">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                        <input type="hidden" id="reviewRating" name="reviewRating" required>
+                    </div>
+
+                    <div>
+                        <label for="reviewText" class="block text-sm font-semibold text-gray-700 mb-2">Your Review</label>
+                        <textarea id="reviewText" name="reviewText" rows="4" required
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                                  placeholder="Share your experience with JRC..."></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="bg-amber-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-amber-700 transition-all transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Submit Review
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-3xl font-display font-bold gold-accent mb-4">JRC</div>
+                    <p class="text-gray-400 mb-4">Expert watch and jewelry repair serving Minnesota since 1980.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Watch Repair</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Jewelry Repair</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Battery Replacement</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Band Adjustment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="tracking.html" class="hover:text-amber-600 transition-colors">Track Repair</a></li>
+                        <li><a href="locations.html" class="hover:text-amber-600 transition-colors">Locations</a></li>
+                        <li><a href="#" class="hover:text-amber-600 transition-colors">Customer Reviews</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i>(651) 639-6958</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@jrcwatchrepair.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Multiple MN Locations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 JRC Expert Watch & Jewelry Repair. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Star rating functionality
+        let selectedRating = 0;
+        const starButtons = document.querySelectorAll('.star-btn');
+        const ratingInput = document.getElementById('reviewRating');
+
+        starButtons.forEach((btn, index) => {
+            btn.addEventListener('click', function() {
+                selectedRating = parseInt(this.dataset.rating);
+                ratingInput.value = selectedRating;
+                updateStarDisplay();
+            });
+
+            btn.addEventListener('mouseenter', function() {
+                const hoverRating = parseInt(this.dataset.rating);
+                highlightStars(hoverRating);
+            });
+        });
+
+        document.querySelector('.flex.space-x-2').addEventListener('mouseleave', function() {
+            updateStarDisplay();
+        });
+
+        function highlightStars(rating) {
+            starButtons.forEach((btn, index) => {
+                if (index < rating) {
+                    btn.querySelector('i').classList.remove('text-gray-300');
+                    btn.querySelector('i').classList.add('text-yellow-400');
+                } else {
+                    btn.querySelector('i').classList.remove('text-yellow-400');
+                    btn.querySelector('i').classList.add('text-gray-300');
+                }
+            });
+        }
+
+        function updateStarDisplay() {
+            highlightStars(selectedRating);
+        }
+
+        // Form submission
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (selectedRating === 0) {
+                alert('Please select a rating before submitting your review.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert('Thank you for your review! It has been submitted and will be reviewed before publication.');
+            this.reset();
+            selectedRating = 0;
+            updateStarDisplay();
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>

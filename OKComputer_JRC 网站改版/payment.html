@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - JRC Expert Watch & Jewelry Repair</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        .gold-accent { color: #d4af37; }
+        .payment-card { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.95); }
+        .apple-pay-btn { background: #000; color: white; border-radius: 8px; padding: 12px 24px; font-size: 16px; font-weight: 600; }
+        .apple-pay-btn:hover { background: #333; }
+        .payment-method { transition: all 0.3s ease; border: 2px solid transparent; }
+        .payment-method.selected { border-color: #d4af37; background: rgba(212, 175, 55, 0.1); }
+    </style>
+</head>
+<body class="font-body bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-display font-bold gold-accent">JRC</div>
+                    <div class="ml-2 text-sm font-medium text-gray-600">Expert Watch & Jewelry Repair</div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-amber-600 transition-colors">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-amber-600 transition-colors">Services</a>
+                    <a href="tracking.html" class="text-gray-700 hover:text-amber-600 transition-colors">Track Repair</a>
+                    <a href="locations.html" class="text-gray-700 hover:text-amber-600 transition-colors">Locations</a>
+                    <a href="reviews.html" class="text-gray-700 hover:text-amber-600 transition-colors">Reviews</a>
+                    <a href="admin.html" class="text-gray-700 hover:text-amber-600 transition-colors">Admin</a>
+                </div>
+                <button class="bg-amber-600 text-white px-6 py-2 rounded-lg hover:bg-amber-700 transition-colors">
+                    Get Quote
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-credit-card text-white text-3xl"></i>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">Secure Payment</h1>
+            <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto">
+                Fast, secure payment options including Apple Pay for your convenience
+            </p>
+        </div>
+    </section>
+
+    <!-- Payment Form -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="payment-card rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-display font-bold mb-4">Complete Your Payment</h2>
+                    <p class="text-gray-600">Secure payment processing for your repair services</p>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Order Summary</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span>Rolex Submariner - Battery Replacement</span>
+                            <span class="font-semibold">$25.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Water Resistance Test</span>
+                            <span class="font-semibold">$20.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Service Fee</span>
+                            <span class="font-semibold">$5.00</span>
+                        </div>
+                        <div class="border-t pt-3 flex justify-between text-lg font-bold">
+                            <span>Total</span>
+                            <span class="gold-accent">$50.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Payment Method</h3>
+                    <div class="space-y-4">
+                        <!-- Apple Pay -->
+                        <div class="payment-method selected p-4 rounded-lg cursor-pointer" onclick="selectPaymentMethod('apple-pay')">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fab fa-apple text-white text-2xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold">Apple Pay</h4>
+                                    <p class="text-gray-600 text-sm">Pay with Touch ID or Face ID</p>
+                                </div>
+                                <div class="text-green-600">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Credit Card -->
+                        <div class="payment-method p-4 rounded-lg cursor-pointer" onclick="selectPaymentMethod('credit-card')">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-credit-card text-white"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold">Credit/Debit Card</h4>
+                                    <p class="text-gray-600 text-sm">Visa, Mastercard, American Express</p>
+                                </div>
+                                <div class="text-gray-400">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Google Pay -->
+                        <div class="payment-method p-4 rounded-lg cursor-pointer" onclick="selectPaymentMethod('google-pay')">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fab fa-google text-white"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold">Google Pay</h4>
+                                    <p class="text-gray-600 text-sm">Pay with your Google account</p>
+                                </div>
+                                <div class="text-gray-400">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apple Pay Button -->
+                <div id="applePaySection" class="mb-8">
+                    <button class="apple-pay-btn w-full flex items-center justify-center" onclick="processApplePay()">
+                        <i class="fab fa-apple mr-3 text-2xl"></i>
+                        Pay with Apple Pay
+                    </button>
+                    <p class="text-center text-sm text-gray-600 mt-2">
+                        Admin Account: Payments will be processed to your configured merchant account
+                    </p>
+                </div>
+
+                <!-- Credit Card Form -->
+                <div id="creditCardSection" class="hidden mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2">
+                            <label for="cardNumber" class="block text-sm font-semibold text-gray-700 mb-2">Card Number</label>
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label for="expiryDate" class="block text-sm font-semibold text-gray-700 mb-2">Expiry Date</label>
+                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label for="cvv" class="block text-sm font-semibold text-gray-700 mb-2">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="cardholderName" class="block text-sm font-semibold text-gray-700 mb-2">Cardholder Name</label>
+                            <input type="text" id="cardholderName" name="cardholderName" placeholder="John Doe"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                        </div>
+                    </div>
+                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors mt-6">
+                        <i class="fas fa-credit-card mr-2"></i>Pay with Card
+                    </button>
+                </div>
+
+                <!-- Google Pay Button -->
+                <div id="googlePaySection" class="hidden mb-8">
+                    <button class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors flex items-center justify-center">
+                        <i class="fab fa-google mr-3 text-2xl"></i>
+                        Pay with Google Pay
+                    </button>
+                </div>
+
+                <!-- Security Notice -->
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-green-600 mr-3"></i>
+                        <div>
+                            <h4 class="font-semibold text-green-800">Secure Payment</h4>
+                            <p class="text-green-700 text-sm">Your payment information is encrypted and secure. We never store your payment details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Configuration -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="payment-card rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-cog text-white text-3xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-display font-bold mb-4">Admin Payment Configuration</h2>
+                    <p class="text-gray-600">Configure your payment processing settings</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-800">
+                            <i class="fas fa-apple-pay mr-2"></i>Apple Pay Setup
+                        </h3>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-sm font-semibold text-blue-700">Merchant ID</label>
+                                <input type="text" value="merchant.com.jrcwatchrepair" readonly
+                                       class="w-full px-3 py-2 border border-blue-300 rounded bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-blue-700">Domain</label>
+                                <input type="text" value="jrcwatchrepair.com" readonly
+                                       class="w-full px-3 py-2 border border-blue-300 rounded bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-blue-700">Status</label>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                                    <span class="text-green-700 font-semibold">Verified & Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 text-green-800">
+                            <i class="fas fa-credit-card mr-2"></i>Payment Processing
+                        </h3>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-sm font-semibold text-green-700">Processor</label>
+                                <input type="text" value="Stripe Connect" readonly
+                                       class="w-full px-3 py-2 border border-green-300 rounded bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-green-700">Account ID</label>
+                                <input type="text" value="acct_1JRCwatchrepair" readonly
+                                       class="w-full px-3 py-2 border border-green-300 rounded bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-green-700">Settlement</label>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                                    <span class="text-green-700 font-semibold">Daily Auto-Settlement</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-amber-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-amber-800">
+                        <i class="fas fa-info-circle mr-2"></i>Payment Flow
+                    </h3>
+                    <div class="space-y-2 text-amber-700">
+                        <p><strong>1.</strong> Customer selects payment method</p>
+                        <p><strong>2.</strong> Payment is processed securely</p>
+                        <p><strong>3.</strong> Funds are transferred to your merchant account</p>
+                        <p><strong>4.</strong> SMS confirmation is sent to customer</p>
+                        <p><strong>5.</strong> Admin dashboard shows payment status</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-3xl font-display font-bold gold-accent mb-4">JRC</div>
+                    <p class="text-gray-400 mb-4">Expert watch and jewelry repair serving Minnesota since 1980.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Watch Repair</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Jewelry Repair</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Battery Replacement</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Band Adjustment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="tracking.html" class="hover:text-amber-600 transition-colors">Track Repair</a></li>
+                        <li><a href="locations.html" class="hover:text-amber-600 transition-colors">Locations</a></li>
+                        <li><a href="reviews.html" class="hover:text-amber-600 transition-colors">Customer Reviews</a></li>
+                        <li><a href="admin.html" class="hover:text-amber-600 transition-colors">Admin Login</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i>(651) 639-6958</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@jrcwatchrepair.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Multiple MN Locations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 JRC Expert Watch & Jewelry Repair. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function selectPaymentMethod(method) {
+            // Remove selected class from all payment methods
+            document.querySelectorAll('.payment-method').forEach(el => {
+                el.classList.remove('selected');
+                el.querySelector('.fa-check-circle').classList.add('hidden');
+                el.querySelector('.fa-circle').classList.remove('hidden');
+            });
+
+            // Add selected class to clicked method
+            event.currentTarget.classList.add('selected');
+            event.currentTarget.querySelector('.fa-check-circle').classList.remove('hidden');
+            event.currentTarget.querySelector('.fa-circle').classList.add('hidden');
+
+            // Hide all payment sections
+            document.getElementById('applePaySection').classList.add('hidden');
+            document.getElementById('creditCardSection').classList.add('hidden');
+            document.getElementById('googlePaySection').classList.add('hidden');
+
+            // Show selected payment section
+            if (method === 'apple-pay') {
+                document.getElementById('applePaySection').classList.remove('hidden');
+            } else if (method === 'credit-card') {
+                document.getElementById('creditCardSection').classList.remove('hidden');
+            } else if (method === 'google-pay') {
+                document.getElementById('googlePaySection').classList.remove('hidden');
+            }
+        }
+
+        function processApplePay() {
+            // Simulate Apple Pay processing
+            if (window.ApplePaySession) {
+                alert('Apple Pay is available. Processing payment...');
+                // In real implementation, this would trigger Apple Pay sheet
+                setTimeout(() => {
+                    alert('Payment successful! Transaction ID: JRC2024001-PAY50');
+                    // Send SMS notification
+                    sendPaymentConfirmation();
+                }, 2000);
+            } else {
+                alert('Apple Pay is not available on this device. Please use another payment method.');
+            }
+        }
+
+        function sendPaymentConfirmation() {
+            // Simulate SMS notification
+            console.log('SMS sent: Payment confirmation for $50.00 sent to customer phone.');
+        }
+
+        // Initialize with Apple Pay selected
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.payment-method').click();
+        });
+    </script>
+</body>
+</html>

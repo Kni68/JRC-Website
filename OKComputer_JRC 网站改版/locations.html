@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations - JRC Expert Watch & Jewelry Repair</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        .gold-accent { color: #d4af37; }
+        .location-card { transition: all 0.3s ease; }
+        .location-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .service-image { transition: all 0.3s ease; }
+        .service-image:hover { transform: scale(1.05); }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+        .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="font-body bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-display font-bold gold-accent">JRC</div>
+                    <div class="ml-2 text-sm font-medium text-gray-600">Expert Watch & Jewelry Repair</div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-amber-600 transition-colors">Home</a>
+                    <a href="services.html" class="text-gray-700 hover:text-amber-600 transition-colors">Services</a>
+                    <a href="tracking.html" class="text-gray-700 hover:text-amber-600 transition-colors">Track Repair</a>
+                    <a href="locations.html" class="text-amber-600 font-semibold">Locations</a>
+                    <a href="reviews.html" class="text-gray-700 hover:text-amber-600 transition-colors">Reviews</a>
+                    <a href="admin.html" class="text-gray-700 hover:text-amber-600 transition-colors">Admin</a>
+                </div>
+                <button class="bg-amber-600 text-white px-6 py-2 rounded-lg hover:bg-amber-700 transition-colors">
+                    Get Quote
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-map-marker-alt text-white text-3xl"></i>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">Our Locations</h1>
+            <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto">
+                Visit us at three convenient Macy's locations throughout Minnesota for expert watch and jewelry repair services
+            </p>
+        </div>
+    </section>
+
+    <!-- Locations Grid -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Southdale Center -->
+                <div class="location-card bg-white rounded-2xl shadow-lg overflow-hidden scroll-reveal">
+                    <div class="h-64 bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-store text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-display font-bold text-gray-800">Southdale Center</h3>
+                            <p class="text-gray-600">Macy's Location</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-amber-600 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-800">100 Southdale Center</p>
+                                    <p class="text-gray-600">Edina, MN 55435</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-amber-600 mr-3"></i>
+                                <span class="text-gray-700 font-semibold">(952) 591-1234</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-amber-600 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="text-gray-700 font-semibold">Mon-Sat: 11:00 AM - 6:00 PM</p>
+                                    <p class="text-gray-600 text-sm">Sunday: 12:00 PM - 5:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <button class="flex-1 bg-amber-600 text-white py-3 px-4 rounded-lg hover:bg-amber-700 transition-colors font-semibold">
+                                <i class="fas fa-directions mr-2"></i>Get Directions
+                            </button>
+                            <button class="flex-1 bg-gray-200 text-gray-700 py-3 px-4 rounded-lg hover:bg-gray-300 transition-colors font-semibold">
+                                <i class="fas fa-phone mr-2"></i>Call Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roseville Location -->
+                <div class="location-card bg-white rounded-2xl shadow-lg overflow-hidden scroll-reveal">
+                    <div class="h-64 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-store text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-display font-bold text-gray-800">Roseville</h3>
+                            <p class="text-gray-600">Macy's Location</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-blue-600 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-800">1815 Hwy 36 W</p>
+                                    <p class="text-gray-600">Roseville, MN 55113</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-blue-600 mr-3"></i>
+                                <span class="text-gray-700 font-semibold">(651) 639-6958</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-blue-600 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="text-gray-700 font-semibold">Mon-Sat: 11:00 AM - 6:00 PM</p>
+                                    <p class="text-gray-600 text-sm">Sunday: 12:00 PM - 5:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <button class="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                                <i class="fas fa-directions mr-2"></i>Get Directions
+                            </button>
+                            <button class="flex-1 bg-gray-200 text-gray-700 py-3 px-4 rounded-lg hover:bg-gray-300 transition-colors font-semibold">
+                                <i class="fas fa-phone mr-2"></i>Call Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Richfield Location -->
+                <div class="location-card bg-white rounded-2xl shadow-lg overflow-hidden scroll-reveal">
+                    <div class="h-64 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-store text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-display font-bold text-gray-800">Richfield</h3>
+                            <p class="text-gray-600">Macy's Location</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-800">1000 Southdale Center</p>
+                                    <p class="text-gray-600">Richfield, MN 55435</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-green-600 mr-3"></i>
+                                <span class="text-gray-700 font-semibold">(612) 861-4567</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <p class="text-gray-700 font-semibold">Mon-Sat: 11:00 AM - 6:00 PM</p>
+                                    <p class="text-gray-600 text-sm">Sunday: 12:00 PM - 5:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <button class="flex-1 bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                                <i class="fas fa-directions mr-2"></i>Get Directions
+                            </button>
+                            <button class="flex-1 bg-gray-200 text-gray-700 py-3 px-4 rounded-lg hover:bg-gray-300 transition-colors font-semibold">
+                                <i class="fas fa-phone mr-2"></i>Call Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Showcase -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Our Work Speaks for Itself</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    See the transformation of timepieces and jewelry through our expert craftsmanship
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Watch Repair Before/After -->
+                <div class="scroll-reveal">
+                    <div class="bg-gray-50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-display font-bold mb-6 text-center">Watch Restoration</h3>
+                        <div class="relative">
+                            <img src="watch-repair-before-after.png" alt="Watch Repair Before and After" class="w-full rounded-lg shadow-lg">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-white/90 backdrop-blur-sm rounded-lg p-4 text-center">
+                                    <div class="flex items-center justify-center mb-2">
+                                        <i class="fas fa-tools text-amber-600 text-2xl mr-2"></i>
+                                        <span class="font-semibold text-gray-800">Expert Restoration</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Complete overhaul and refinishing</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <p class="text-gray-700 mb-4">
+                                From scratched and worn to pristine condition. Our master craftsmen restore your timepieces to their original glory.
+                            </p>
+                            <button class="bg-amber-600 text-white px-6 py-3 rounded-lg hover:bg-amber-700 transition-colors font-semibold">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jewelry Repair Before/After -->
+                <div class="scroll-reveal">
+                    <div class="bg-gray-50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-display font-bold mb-6 text-center">Jewelry Repair</h3>
+                        <div class="relative">
+                            <img src="jewelry-repair-before-after.png" alt="Jewelry Repair Before and After" class="w-full rounded-lg shadow-lg">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-white/90 backdrop-blur-sm rounded-lg p-4 text-center">
+                                    <div class="flex items-center justify-center mb-2">
+                                        <i class="fas fa-gem text-amber-600 text-2xl mr-2"></i>
+                                        <span class="font-semibold text-gray-800">Precision Repair</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Prong tightening and polishing</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <p class="text-gray-700 mb-4">
+                                Damaged prongs and scratched surfaces are expertly repaired, making your jewelry look brand new again.
+                            </p>
+                            <button class="bg-amber-600 text-white px-6 py-3 rounded-lg hover:bg-amber-700 transition-colors font-semibold">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Details -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center scroll-reveal">
+                    <div class="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-battery-full text-white text-2xl"></i>
+                    </div>
+                    <img src="battery-replacement-service.png" alt="Battery Replacement Service" class="w-full h-48 object-cover rounded-lg mb-4 service-image">
+                    <h3 class="text-xl font-display font-bold mb-4">Battery Replacement</h3>
+                    <p class="text-gray-600">Quick battery replacement while you shop with 1-year warranty on all American-made batteries.</p>
+                </div>
+
+                <div class="text-center scroll-reveal">
+                    <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <div class="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg mb-4 flex items-center justify-center service-image">
+                        <i class="fas fa-cogs text-blue-600 text-6xl"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-4">Complete Overhaul</h3>
+                    <p class="text-gray-600">Full disassembly, cleaning, lubrication, and reassembly with water resistance testing.</p>
+                </div>
+
+                <div class="text-center scroll-reveal">
+                    <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-ring text-white text-2xl"></i>
+                    </div>
+                    <div class="w-full h-48 bg-gradient-to-br from-green-100 to-green-200 rounded-lg mb-4 flex items-center justify-center service-image">
+                        <i class="fas fa-hammer text-green-600 text-6xl"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-4">Ring Sizing</h3>
+                    <p class="text-gray-600">Professional ring sizing for all precious metals including gold, platinum, and sterling silver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Get in Touch</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Have questions? Need directions? Contact any of our locations for assistance
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center scroll-reveal">
+                    <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-2">Phone Support</h3>
+                    <p class="text-gray-600 mb-4">Call any location during business hours for immediate assistance</p>
+                    <p class="text-amber-600 font-semibold">(651) 639-6958</p>
+                </div>
+
+                <div class="text-center scroll-reveal">
+                    <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-2">Email Support</h3>
+                    <p class="text-gray-600 mb-4">Send us your questions and we'll respond within 24 hours</p>
+                    <p class="text-amber-600 font-semibold">info@jrcwatchrepair.com</p>
+                </div>
+
+                <div class="text-center scroll-reveal">
+                    <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-2">Business Hours</h3>
+                    <p class="text-gray-600 mb-2">Monday - Saturday: 11:00 AM - 6:00 PM</p>
+                    <p class="text-gray-600">Sunday: 12:00 PM - 5:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-3xl font-display font-bold gold-accent mb-4">JRC</div>
+                    <p class="text-gray-400 mb-4">Expert watch and jewelry repair serving Minnesota since 1980.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Watch Repair</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Jewelry Repair</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Battery Replacement</a></li>
+                        <li><a href="services.html" class="hover:text-amber-600 transition-colors">Band Adjustment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="tracking.html" class="hover:text-amber-600 transition-colors">Track Repair</a></li>
+                        <li><a href="#" class="hover:text-amber-600 transition-colors">Locations</a></li>
+                        <li><a href="reviews.html" class="hover:text-amber-600 transition-colors">Customer Reviews</a></li>
+                        <li><a href="admin.html" class="hover:text-amber-600 transition-colors">Admin Login</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i>(651) 639-6958</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@jrcwatchrepair.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>3 MN Locations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 JRC Expert Watch & Jewelry Repair. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add click handlers for buttons
+        document.querySelectorAll('.location-card button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.innerHTML.includes('Directions')) {
+                    alert('Opening directions in your default map application...');
+                } else if (this.innerHTML.includes('Call')) {
+                    alert('Calling the location...');
+                }
+            });
+        });
+    </script>
+<script>
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            window.parent.postMessage('go-next', '*');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.parent.postMessage('go-prev', '*');
+        }
+    });
+</script>
+</body>
+</html>
